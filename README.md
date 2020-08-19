@@ -1,1 +1,1 @@
-# design-construct-theme
+# wellSpa-theme
