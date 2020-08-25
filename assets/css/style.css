@@ -95,3 +95,16 @@ All less files compiled automatically via WP Less library
 .copyright li:first-child {
     font-weight: bold;
 }
+
+.site-main {
+    margin: 110px 0 !important;
+}
+
+.site-main #primary .entry {
+    background-color: transparent;
+    margin-bottom: 90px;
+}
+
+.site-main #primary .entry:last-child {
+    margin-bottom: 0;
+}

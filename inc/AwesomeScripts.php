@@ -53,9 +53,9 @@ class AwesomeScripts
 		wp_enqueue_style('lightbox', get_template_directory_uri() . '/assets/design-construct/css/lightbox.css', $awesomeTheme->version, true);
 
 		wp_enqueue_style('azexo-style-global', get_template_directory_uri() . '/assets/design-construct/css/style.css', $awesomeTheme->version, true);
-		wp_enqueue_style('azexo-skin', get_template_directory_uri() . '/assets/design-construct/css/skin-da45b01e2f.css', $awesomeTheme->version, true);
-		wp_enqueue_style('azexo-fonts', get_template_directory_uri() . '/assets/design-construct/css/css', $awesomeTheme->version, true);
-		wp_enqueue_style('azexo-style', get_template_directory_uri() . '/assets/css/style.css', $awesomeTheme->version, true);
+        wp_enqueue_style('azexo-fonts', get_template_directory_uri() . '/assets/design-construct/css/css', $awesomeTheme->version, true);
+        wp_enqueue_style('azexo-skin', get_template_directory_uri() . '/assets/design-construct/css/skin-da45b01e2f.css', $awesomeTheme->version, true);
+        wp_enqueue_style('azexo-style', get_template_directory_uri() . '/assets/css/style.css', $awesomeTheme->version, true);
 
 	}
 }

@@ -38,6 +38,12 @@ class AwesomeTheme {
 		require_once 'inc/AwesomeScripts.php';
 		new AwesomeScripts;
 	}
+
+    public function pageTemplateInit()
+    {
+        require_once get_template_directory() . '/inc/parrams/template/PageTemplateInit.php';
+        return PageTemplateInit::getInstance();
+    }
 }
 
 function AwesomeTheme() {

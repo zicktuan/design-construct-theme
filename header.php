@@ -40,9 +40,9 @@
             $optionTheme  = $myplugin->themeSettings->getSettings();
         ?>
         <div id="page" class="hfeed site" style="visibility: visible;">
-            <header id="masthead" class="site-header clearfix scrolled">
+            <header id="masthead" class="site-header clearfix">
 
-                <div class="header-main clearfix animated fadeInDown">
+                <div class="header-main clearfix">
                     <div class="header-parts container">
                         <a class="site-title" href="<?php echo home_url(); ?>" rel="home">
                             <img src="<?php echo !empty($optionTheme['awe_header_logo']) ? esc_url($optionTheme['awe_header_logo']) : '' ?>" alt="logo">
@@ -79,26 +79,21 @@
 
                     </div>
                 </div>
-
                 <div id="middle" class="sidebar-container" role="complementary">
                     <div class="sidebar-inner">
                         <div class="widget-area clearfix">
                             <div id="azh_widget-4" class="widget widget_azh_widget">
-                                <div class="hero bg-image overlay" data-image-src="<?php echo !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : '' ?>" data-section="Image-middle-home" style="background: url(<?php echo !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : '' ?>) 0% 1529.6px / cover no-repeat; height: 779px;">
+                                <div class="hero bg-image overlay"
+                                     data-stellar-background-ratio="0.2"
+                                     data-image-src="<?php echo !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : '' ?>"
+                                     data-section="Image-middle-home"
+                                >
                                     <div class="container valign">
                                         <div class="row">
                                             <div class="col-sm-8 col-sm-offset-2 text-center">
-                                                <h1 class="font-white font-cursive wow fadeInRight">
+                                                <h1 class="font-white font-cursive wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
                                                     <?php echo !empty($optionTheme['awe_header_title_bg']) ? trim($optionTheme['awe_header_title_bg']) : '' ?>
                                                 </h1>
-<!--                                                <p class="margin-top-30">-->
-<!--                                                    <a class="btn btn-round btn-md btn-white pagescroll" href="#">-->
-<!--                                                        Get in Touch-->
-<!--                                                    </a>-->
-<!--                                                    <a class="btn btn-round btn-md btn-white" href="#">-->
-<!--                                                        Buy template-->
-<!--                                                    </a>-->
-<!--                                                </p>-->
                                             </div>
                                         </div>
                                     </div>

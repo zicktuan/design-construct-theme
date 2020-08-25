@@ -21,6 +21,8 @@ class AfterSetupTheme{
 		add_filter( 'the_title', array( $this, 'siteTitle' ) );
 
 		add_action( 'widgets_init', array( $this, 'widgetsInit' ) );
+
+        add_filter( 'nav_menu_link_attributes', 'wpse156165_menu_add_class', 10, 3 );
 	}
 
 	public function setup(){
@@ -48,6 +50,13 @@ class AfterSetupTheme{
 			)
 		);
 	}
+
+    function wpse156165_menu_add_class( $atts, $item, $args ) {
+        if( $args->theme_location == 'main-menu' ) {
+            $atts['class'] = 'menu-link';
+        }
+        return $atts;
+    }
 
 	public function registerSizeImg()
 	{
