@@ -71,6 +71,7 @@
                                         'container_class' => 'menu-primary-container',
                                         'menu_class'     => 'nav-menu',
                                         'menu_id'     => 'primary-menu',
+                                        'items_wrap'     => '<ul id="%1$s" class="las-menu-list %2$s">%3$s</ul>',
                                     ]
                                 );
                             ?>
@@ -79,13 +80,26 @@
 
                     </div>
                 </div>
+                <?php
+                    $bg = '';
+                    $id = '';
+                    $typePost = get_post_type();
+                    if ( "post" == $typePost ) {
+                        $bg = !empty($optionTheme['blog_bg']) ? esc_url($optionTheme['blog_bg']) : '';
+                        $id = 'azh_widget-2';
+                    } else {
+                        $bg = !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : '';
+                        $id = 'azh_widget-4';
+                    }
+
+                ?>
                 <div id="middle" class="sidebar-container" role="complementary">
                     <div class="sidebar-inner">
                         <div class="widget-area clearfix">
-                            <div id="azh_widget-4" class="widget widget_azh_widget">
+                            <div id="<?php echo $id ?>" class="widget widget_azh_widget">
                                 <div class="hero bg-image overlay"
                                      data-stellar-background-ratio="0.2"
-                                     data-image-src="<?php echo !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : '' ?>"
+                                     data-image-src="<?php echo $bg ?>"
                                      data-section="Image-middle-home"
                                 >
                                     <div class="container valign">
