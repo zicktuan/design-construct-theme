@@ -26,6 +26,7 @@ class AwesomeTheme {
 	protected function __construct() {
 		// Init scripts for theme.
 		$this->AwesomeScripts();
+		$this->includeFunction();
 	}
 
 	/**
@@ -38,6 +39,15 @@ class AwesomeTheme {
 		require_once 'inc/AwesomeScripts.php';
 		new AwesomeScripts;
 	}
+
+    /**
+     * Include file Function handle
+     * @return void
+     */
+    public function includeFunction(){
+        require_once get_template_directory() . '/inc/Helpers/HelpersFunction.php';
+        return HelpersFunction::getInstance();
+    }
 }
 
 function AwesomeTheme() {

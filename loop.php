@@ -14,12 +14,12 @@
         <div class="entry-header">
             <div class="entry-extra">
                 <span class="date">
-                    <a href="http://azexo.com/madison/restaurant/omnis-iste-natus-sit-accusantium/" title="Permalink to Omnis iste natus sit accusantium." rel="bookmark">
-                        <time class="entry-date" datetime="2017-01-06T13:14:47+00:00"><?php the_time('F j, Y'); ?></time>
+                    <a href="<?php the_permalink() ?>" title="<?php the_title() ?>" rel="bookmark">
+                        <time class="entry-date"><?php the_time('F j, Y'); ?></time>
                     </a>
                 </span>
                 <span class="comments">
-                    <a href="http://azexo.com/madison/restaurant/omnis-iste-natus-sit-accusantium/#respond">
+                    <a href="<?php the_permalink() ?>#comments">
                         <span class="count"><?php echo get_comments_number(get_the_ID()); ?></span>
                         <span class="label"><?php _e('comments', 'bookawesome') ?></span>
                     </a>
@@ -32,7 +32,7 @@
             <div class="entry-meta">
                 <span class="author vcard">
                     <span class="label"><?php _e('Posted by:', 'bookawesome') ?></span>
-                    <a class="url fn n" href="http://azexo.com/madison/restaurant/author/admin/" title="View all posts by admin" rel="author"><b><?php the_author()?></b></a>
+                    <a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="View all posts by admin" rel="author"><b><?php the_author()?></b></a>
                 </span>
                 <span class="categories-links">
                     <span class="label"> <?php _e('In', 'bookawesome') ?></span>
@@ -61,3 +61,4 @@
     </div>
 </div>
 <?php endwhile; endif; ?>
+

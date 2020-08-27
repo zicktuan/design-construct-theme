@@ -1,14 +1,12 @@
 <?php get_header(); ?>
-<section id="content" role="main">
-<article id="post-0" class="post not-found">
-<header class="header">
-<h1 class="entry-title"><?php _e( 'Not Found', 'blankslate' ); ?></h1>
-</header>
-<section class="entry-content">
-<p><?php _e( 'Nothing found for the requested page. Try a search instead?', 'blankslate' ); ?></p>
-<?php get_search_form(); ?>
-</section>
-</article>
-</section>
-<?php get_sidebar(); ?>
+
+<div id="main" class="site-main">
+    <div class="container">
+        <div id="404-not-found" style="text-align: center">
+            <h1 class="entry-title"><b><?php _e( '404 Not Found', 'bookawesome' ); ?></b></h1>
+            <h3><?php _e( 'Nothing found for the requested post. Try a search instead?', 'bookawesome' ); ?></h3>
+        </div>
+    </div>
+</div>
+
 <?php get_footer(); ?>

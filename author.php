@@ -1,15 +1,33 @@
 <?php get_header(); ?>
-<section id="content" role="main">
-<header class="header">
-<?php the_post(); ?>
-<h1 class="entry-title author"><?php _e( 'Author Archives', 'blankslate' ); ?>: <?php the_author_link(); ?></h1>
-<?php if ( '' != get_the_author_meta( 'user_description' ) ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . get_the_author_meta( 'user_description' ) . '</div>' ); ?>
-<?php rewind_posts(); ?>
-</header>
-<?php while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php endwhile; ?>
-<?php get_template_part( 'nav', 'below' ); ?>
-</section>
-<?php get_sidebar(); ?>
+    <div id="main" class="site-main">
+        <div class="container active-sidebar right ">
+
+            <div id="primary" class="content-area">
+                <div id="content" class="site-content post " role="main">
+
+                    <?php get_template_part( 'loop' ); ?>
+
+                </div>
+                <!-- #content -->
+
+                <!--navigation-->
+                <?php
+                    global $awesomeTheme, $wp_query;
+                    $awesomeTheme->includeFunction()->awePagination($wp_query->max_num_pages);
+                ?>
+
+            </div><!-- #primary -->
+
+            <!--sidebar-->
+            <div id="tertiary" class="sidebar-container" role="complementary">
+                <div class="sidebar-inner">
+                    <div class="widget-area clearfix">
+                        <?php dynamic_sidebar('blog-sidebar-area'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 <?php get_footer(); ?>

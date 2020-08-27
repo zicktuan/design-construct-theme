@@ -100,11 +100,6 @@ All less files compiled automatically via WP Less library
     margin: 110px 0 !important;
 }
 
-.site-main #primary .entry {
-    background-color: transparent;
-    margin-bottom: 90px;
-}
-
 .site-main #primary .entry:last-child {
     margin-bottom: 0;
 }

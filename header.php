@@ -30,8 +30,12 @@
 <!--        <script type="text/javascript" charset="UTF-8" src="--><?php //echo get_template_directory_uri() ?><!--/assets/js/AuthenticationService.Authenticate"></script>-->
         <?php wp_head() ?>
     </head>
-
+    <?php $typePost = get_post_type(); ?>
+    <?php if( "post" == $typePost ): ?>
+        <body class="post-template-default single single-post postid-28 single-format-standard" >
+    <?php else: ?>
     <body class="home page-template page-template-page-templates page-template-without-container page-template-page-templateswithout-container-php page page-id-11 fixed-menu">
+    <?php endif; ?>
         <div id="preloader" style="display: none;">
             <div id="status" style="display: none;"></div>
         </div>
@@ -77,42 +81,55 @@
                             ?>
                         </nav>
 
-
                     </div>
                 </div>
-                <?php
-                    $bg = '';
-                    $id = '';
-                    $typePost = get_post_type();
-                    if ( "post" == $typePost ) {
-                        $bg = !empty($optionTheme['blog_bg']) ? esc_url($optionTheme['blog_bg']) : '';
-                        $id = 'azh_widget-2';
-                    } else {
-                        $bg = !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : '';
-                        $id = 'azh_widget-4';
-                    }
 
-                ?>
                 <div id="middle" class="sidebar-container" role="complementary">
                     <div class="sidebar-inner">
+
                         <div class="widget-area clearfix">
-                            <div id="<?php echo $id ?>" class="widget widget_azh_widget">
-                                <div class="hero bg-image overlay"
-                                     data-stellar-background-ratio="0.2"
-                                     data-image-src="<?php echo $bg ?>"
-                                     data-section="Image-middle-home"
-                                >
-                                    <div class="container valign">
-                                        <div class="row">
-                                            <div class="col-sm-8 col-sm-offset-2 text-center">
-                                                <h1 class="font-white font-cursive wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
-                                                    <?php echo !empty($optionTheme['awe_header_title_bg']) ? trim($optionTheme['awe_header_title_bg']) : '' ?>
-                                                </h1>
+
+                            <?php if("post" == $typePost): ?>
+                                <div id="azh_widget-2" class="widget widget_azh_widget">
+                                    <div class="inner-hero bg-image overlay"
+                                         data-group="middle-post"
+                                         data-stellar-background-ratio="0.3"
+                                         data-image-src="<?php echo !empty($optionTheme['blog_bg']) ? esc_url($optionTheme['blog_bg']) : ''; ?>"
+                                         style="background: url(<?php echo !empty($optionTheme['blog_bg']) ? esc_url($optionTheme['blog_bg']) : ''; ?>) 0% 0px / cover no-repeat;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <h2 class="page-title font-white">
+                                                        <?php echo !empty($optionTheme['blog_header_title_bg']) ? $optionTheme['blog_header_title_bg'] : ''; ?>
+                                                    </h2>
+                                                    <p class="lead">
+                                                        <?php echo !empty($optionTheme['blog_header_sub_title_bg']) ? $optionTheme['blog_header_sub_title_bg'] : ''; ?>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php else: ?>
+                                <div id="azh_widget-4" class="widget widget_azh_widget">
+                                    <div class="hero bg-image overlay"
+                                         data-stellar-background-ratio="0.2"
+                                         data-image-src="<?php echo !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : ''; ?>"
+                                         data-section="Image-middle-home"
+                                    >
+                                        <div class="container valign">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2 text-center">
+                                                    <h1 class="font-white font-cursive wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+                                                        <?php echo !empty($optionTheme['awe_header_title_bg']) ? trim($optionTheme['awe_header_title_bg']) : '' ?>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif ?>
+
                         </div>
                     </div>
                 </div>

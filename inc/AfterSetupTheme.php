@@ -73,24 +73,13 @@ class AfterSetupTheme{
 
 	public function widgetsInit(){
 
-		//dang ky wwidget
 		register_sidebar( array (
-			'name'          => __( 'BookAwesome Sidebar 1', 'bookawesome' ),
+			'name'          => __( 'Blog Sidebar', 'bookawesome' ),
 			'id'            => 'blog-sidebar-area',
-			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-			'after_widget'  => "</li>",
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-			) 
-		);
-
-		register_sidebar( array (
-			'name'          => __( 'BookAwesome Sidebar 2', 'bookawesome' ),
-			'id'            => 'blog-sidebar-area-2',
-			'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-			'after_widget'  => "</li>",
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+			'after_widget'  => "</div>",
+			'before_title'  => '<div class="widget-title"><h3>',
+			'after_title'   => '</h3></div>',
 			) 
 		);
 	}
