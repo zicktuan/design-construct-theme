@@ -1,15 +1,24 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <div class="entry post post-<?php echo get_the_ID(); ?> type-post status-publish format-standard has-post-thumbnail hentry">
-    <div class="entry-thumbnail">
+    <?php $idVideo = get_post_meta( get_the_ID(), 'awe_id_video', true ); ?>
 
-        <?php if(has_post_thumbnail()): ?>
-            <a href="<?php the_permalink() ?>">
-                <div class="image " style="background-image: url(<?php the_post_thumbnail_url() ?>); height: 620px;" data-width="827" data-height="620"></div>
-            </a>
-        <?php endif;?>
+    <?php if( !empty( $idVideo ) ): ?>
+        <div class="entry-video">
+            <iframe src="https://www.youtube.com/embed/<?php echo $idVideo ?>" width="889" height="500" title="<?php the_title() ?>"></iframe>
+        </div>
+    <?php else: ?>
+        <div class="entry-thumbnail">
 
-    </div>
+            <?php if(has_post_thumbnail()): ?>
+                <a href="<?php the_permalink() ?>">
+                    <div class="image " style="background-image: url(<?php the_post_thumbnail_url() ?>); height: 620px;" data-width="827" data-height="620"></div>
+                </a>
+            <?php endif;?>
+
+        </div>
+    <?php endif ?>
+
     <div class="entry-data">
         <div class="entry-header">
             <div class="entry-extra">

@@ -45,7 +45,7 @@ class AfterSetupTheme{
 		// dang ky menu
 		register_nav_menus(
 			array(
-				'main-menu'   => __( 'Primary Menu', 'bookawesome' ),
+				'awe-header-menu'   => __( 'Primary Menu', 'bookawesome' ),
 				'awesome-footer-menu' => __( 'Footer Menu', 'bookawesome' )
 			)
 		);

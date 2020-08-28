@@ -54,33 +54,34 @@
                         <div class="mobile-menu-button">
                             <span><i class="fa fa-bars"></i></span>
                         </div>
-<!--                        <nav class="site-navigation mobile-menu">-->
-<!--                            <div class="menu-primary-container">-->
-<!--                                <ul id="primary-menu-mobile" class="nav-menu">-->
-<!--                                    <li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-11 current_page_item menu-item-16">-->
-<!--                                        <a href="--><?php //echo home_url() ?><!--" class="menu-link">--><?php //_e('Home', 'bookawesome') ?><!--</a>-->
-<!--                                    </li>-->
-<!--                                    <li id="menu-item-15" class="height-lite menu-item menu-item-type-post_type menu-item-object-page menu-item-15">-->
-<!--                                        <a href="#" class="menu-link">Blog</a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </nav>-->
-                        <nav class="site-navigation primary-navigation">
+                        <nav class="site-navigation mobile-menu">
                             <?php
                                 wp_nav_menu(
                                     [
-                                        'theme_location' => 'main-menu',
-                                        'container' => 'div',
+                                        'theme_location' => 'awe-header-menu',
+                                        'walker'         => new CustomPrimaryMenuWalker(),
+                                        'container'      => 'div',
                                         'container_class' => 'menu-primary-container',
-                                        'menu_class'     => 'nav-menu',
+                                        'menu_class' => 'nav-menu',
                                         'menu_id'     => 'primary-menu',
-                                        'items_wrap'     => '<ul id="%1$s" class="las-menu-list %2$s">%3$s</ul>',
                                     ]
                                 );
                             ?>
                         </nav>
-
+                        <nav class="site-navigation primary-navigation">
+                            <?php
+                                wp_nav_menu(
+                                    [
+                                        'theme_location' => 'awe-header-menu',
+                                        'walker'         => new CustomPrimaryMenuWalker(),
+                                        'container' => 'div',
+                                        'container_class' => 'menu-primary-container',
+                                        'menu_class'     => 'nav-menu',
+                                        'menu_id'     => 'primary-menu',
+                                    ]
+                                );
+                            ?>
+                        </nav>
                     </div>
                 </div>
 

@@ -74,7 +74,7 @@ All less files compiled automatically via WP Less library
 	clip: auto !important;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
+	/*font-size: 14px;*/
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
@@ -102,4 +102,19 @@ All less files compiled automatically via WP Less library
 
 .site-main #primary .entry:last-child {
     margin-bottom: 0;
+}
+
+@media (max-width: 768px){
+    #tertiary {
+        margin-top: 35px;
+    }
+
+    nav.paging-navigation {
+        margin-top: 0;
+    }
+
+    #content .entry .entry-data .entry-content {
+        margin-bottom: 45px;
+    }
+
 }

@@ -13,9 +13,9 @@
                                 wp_nav_menu(
                                     [
                                         'theme_location' => 'awesome-footer-menu',
+                                        'walker'         => new CustomPrimaryMenuWalker(),
                                         'container' => '',
                                         'menu_class'     => 'copyright clearfix',
-                                        'items_wrap'           => '<ul class="%2$s">%3$s</ul>',
                                     ]
                                 );
                             ?>
@@ -47,7 +47,7 @@
 
 <script>
     jQuery(document).ready(function($) {
-        $('#primary-menu > li > a').addClass('menu-link');
+
     });
 </script>
 

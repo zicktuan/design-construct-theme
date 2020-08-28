@@ -56,4 +56,5 @@ function AwesomeTheme() {
 
 $GLOBALS['awesomeTheme'] = AwesomeTheme();
 
+require_once( 'inc/Classes/CustomPrimaryMenuWalker.php' );
 include 'inc/AfterSetupTheme.php';
