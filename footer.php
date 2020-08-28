@@ -47,7 +47,8 @@
 
 <script>
     jQuery(document).ready(function($) {
-
+        jQuery("#portfolio-3").cubeportfolio('append', '<div class="logo cbp-item">my awesome content to append to plugin</div> <div class="logo cbp-item">my second awesome content to append to plugin</div>');
+        console.log(131231);
     });
 </script>
 
